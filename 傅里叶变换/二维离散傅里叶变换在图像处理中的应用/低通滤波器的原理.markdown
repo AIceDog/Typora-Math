@@ -47,7 +47,7 @@ $$ \hat{f}(x, y) = \frac{1}{MN} \sum_{u=0}^{M-1} \sum_{v=0}^{N-1} \hat{F}(u, v) 
 假设我们有一个 5x5 的图像矩阵 $ f(x, y) $，以及一个截止频率 $ D_0 $。
 
 1. **计算傅里叶变换**：
-   $$ F(u, v) = \sum_{x=0}^{4} \sum_{y=0}^{4} f(x, y) \cdot e^{-j2\pi\left(\frac{ux}{5} + \frac{vy}{5}\right)} $$
+   $$F(u, v) = \sum_{x=0}^{4} \sum_{y=0}^{4} f(x, y) \cdot e^{-j2\pi\left(\frac{ux}{5} + \frac{vy}{5}\right)}$$
 
 2. **构建低通滤波器**（假设 $ D_0 = 1 $）：
    $$ H(u, v) = \begin{cases}
