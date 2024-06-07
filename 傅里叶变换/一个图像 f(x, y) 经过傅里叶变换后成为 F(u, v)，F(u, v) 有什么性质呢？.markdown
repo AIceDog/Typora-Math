@@ -156,7 +156,7 @@ $$ F(0, 0) = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} f(x, y) $$
 3. 应用滤波器（如理想低通滤波器）：
    $$ \hat{F}(u, v) = H(u, v) \cdot F(u, v) $$
 
-4. 计算逆傅里叶变换 $ \hat{f}(x, y) $：
+4. 计算逆傅里叶变换 $ \hat{f}(x, y) $ ：
    $$ \hat{f}(x, y) = \frac{1}{MN} \sum_{u=0}^{M-1} \sum_{v=0}^{N-1} \hat{F}(u, v) \cdot e^{j2\pi\left(\frac{ux}{M} + \frac{vy}{N}\right)} $$
 
 通过以上步骤，可以在频域中处理图像，并利用傅里叶变换的性质实现各种图像处理任务。
