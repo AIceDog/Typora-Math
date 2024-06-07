@@ -25,10 +25,10 @@ $$ F(u, v) = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} f(x, y) \cdot e^{-j2\pi\left(\fra
 
 低通滤波器在频域中通过一个掩膜函数 $ H(u, v) $ 实现，通常定义为：
 
-$$ H(u, v) = \begin{cases}
+$$H(u, v) = \begin{cases}
 1, & \text{if } \sqrt{u^2 + v^2} \leq D_0 \\
 0, & \text{if } \sqrt{u^2 + v^2} > D_0
-\end{cases} $$
+\end{cases}$$
 
 其中 $ D_0 $ 是截止频率，决定了保留的低频成分的范围。
 
@@ -50,10 +50,10 @@ $$ \hat{f}(x, y) = \frac{1}{MN} \sum_{u=0}^{M-1} \sum_{v=0}^{N-1} \hat{F}(u, v) 
    $$F(u, v) = \sum_{x=0}^{4} \sum_{y=0}^{4} f(x, y) \cdot e^{-j2\pi\left(\frac{ux}{5} + \frac{vy}{5}\right)}$$
 
 2. **构建低通滤波器**（假设 $ D_0 = 1 $）：
-   $$ H(u, v) = \begin{cases}
+   $$H(u, v) = \begin{cases}
    1, & \text{if } \sqrt{u^2 + v^2} \leq 1 \\
    0, & \text{if } \sqrt{u^2 + v^2} > 1
-   \end{cases} $$
+   \end{cases}$$
 
    对于 5x5 的频谱矩阵 $ H(u, v) $ 可以表示为（中心化处理）：
    $$
@@ -67,10 +67,10 @@ $$ \hat{f}(x, y) = \frac{1}{MN} \sum_{u=0}^{M-1} \sum_{v=0}^{N-1} \hat{F}(u, v) 
    $$
 
 3. **应用滤波器**：
-   $$ \hat{F}(u, v) = H(u, v) \cdot F(u, v) $$
+   $$\hat{F}(u, v) = H(u, v) \cdot F(u, v)$$
 
 4. **逆傅里叶变换**：
-   $$ \hat{f}(x, y) = \frac{1}{25} \sum_{u=0}^{4} \sum_{v=0}^{4} \hat{F}(u, v) \cdot e^{j2\pi\left(\frac{ux}{5} + \frac{vy}{5}\right)} $$
+   $$\hat{f}(x, y) = \frac{1}{25} \sum_{u=0}^{4} \sum_{v=0}^{4} \hat{F}(u, v) \cdot e^{j2\pi\left(\frac{ux}{5} + \frac{vy}{5}\right)}$$
 
 ### 低通滤波器的效果
 
